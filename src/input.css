@@ -1,0 +1,292 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.body{
+    @apply font-montserrat
+}
+.container{
+    @apply max-w-[90rem] p-6 w-full mx-auto
+}
+
+@layer components {
+
+    .header__wrapper {
+        @apply py-4 lg:px-[8rem] flex items-center bg-center justify-between lg:py-1
+      }
+      nav {
+        @apply absolute w-full h-full bg-light top-[75px] left-[-100%] z-10 border-t-[1px] border-gray-200 transition-all duration-[0.5s] lg:static lg:border-none;
+      }
+      .open {
+        @apply w-full left-0;
+      }
+    
+      .nav-links {
+        @apply flex uppercase flex-col text-center lg:flex-row lg:justify-end lg:text-[14px];
+      }
+    
+      .nav-links ul li {
+        @apply border-b-[1px] border-gray-300;
+      }
+    
+      .nav-links li {
+        @apply lg:relative;
+      }
+      .nav-links li::after {
+        @apply lg:bottom-0 lg:content-[''] lg:block lg:h-[5px] lg:left-[50%] lg:absolute lg:bg-[#6a103f] lg:[transition:width_0.3s_ease_0s,_left_0.3s_ease_0s] lg:w-0;
+      }
+      .nav-links li:hover::after {
+        @apply w-full left-0;
+      }
+      .nav-links li a {
+        @apply relative inline-block h-[60px] leading-[60px] w-full text-primary hover:bg-primary hover:text-white transition-all duration-300 lg:hover:bg-transparent lg:hover:text-primary lg:px-5;
+      }
+
+       /* SUB MENU */
+  .dropdown-parent {
+    @apply lg:relative;
+  }
+
+  .nav-links-dropdown {
+    @apply hidden relative p-5 left-0 p-0 border-t-[1px] bg-[#480f2d] lg:bg-light lg:absolute lg:leading-[30px];
+  }
+
+  .nav-links-dropdown li {
+    @apply border-none hover:bg-[#6a103f] lg:hover:bg-transparent lg:w-[300px];
+  }
+  .nav-links-dropdown li::after {
+    @apply lg:h-[2px] lg:bottom-2;
+  }
+
+  .nav-links-dropdown li a {
+    @apply h-auto leading-[1.6] text-light !p-0 lg:text-left lg:text-primary;
+  }
+
+  .nav-links-dropdown.active {
+    @apply block;
+  }
+  a.active {
+    @apply bg-primary text-light;
+  }
+
+  .burger__menu span {
+    @apply block absolute h-[8px] w-full bg-primary rounded-lg opacity-100 left-0;
+  }
+
+  .burger__menu span:nth-child(1) {
+    @apply opacity-100 top-0 transition-all duration-300;
+  }
+
+  .burger__menu span:nth-child(2) {
+    @apply top-[15px] transition-all duration-300;
+  }
+
+  .burger__menu span:nth-child(3) {
+    @apply top-[15px] transition-all duration-300;
+  }
+
+  .burger__menu span:nth-child(4) {
+    @apply opacity-100 top-[30px] transition-all duration-300;
+  }
+
+  .burger__menu.open span:nth-child(1) {
+    @apply top-[15px] w-0 left-[50%] opacity-0 transition-all duration-300;
+  }
+
+  .burger__menu.open span:nth-child(2) {
+    @apply rotate-[45deg] transition-all duration-300;
+  }
+
+  .burger__menu.open span:nth-child(3) {
+    @apply rotate-[-45deg] transition-all duration-300;
+  }
+
+  .burger__menu.open span:nth-child(4) {
+    @apply top-[15px] w-0 left-[50%] opacity-0 transition-all duration-300;
+  }
+
+
+   
+      /*BANNER*/
+    .banner{
+    @apply p-8 bg-[#f5f5f5] 
+      }
+   .banner__info{
+    @apply lg:grid lg:grid-cols-2
+   }
+   .banner__content{
+    @apply lg:mt-32 lg:mx-32
+   }
+   .banner__content h1 span{
+    @apply font-bold text-3xl
+   }
+   .banner__content h1 {
+    @apply font-normal text-3xl mb-10
+   }
+   .banner__content p {
+    @apply mb-10
+   }
+
+   WHOWHAT
+   .whowhat{
+    @apply mt-24 mb-24
+   }
+   .whowhat__wrapper h2{
+    @apply text-center text-3xl font-bold mb-5
+   }
+   .whowhat__wrapper h2 span{
+    @apply text-center text-3xl font-normal mb-5
+   }
+   .whowhat__wrapper p{
+    @apply text-center lg:mx-[15.5rem] text-lg
+   }
+
+   /* services */
+   .services__card {
+    @apply my-20 lg:my-0 lg:mb-20;
+  }
+
+  .services__card ul {
+    @apply list-inside;
+  }
+
+  .services__card img {
+    @apply w-[50px] h-[50px] object-contain;
+  }
+
+   /* TESTIMoNIALS */
+   .slider-item {
+    @apply lg:grid lg:grid-cols-2 gap-5;
+  }
+  .slider-item img {
+    @apply mb-2 mx-auto w-[320px] h-[320px] object-cover rounded-[50%];
+  }
+  .slider-desc {
+    @apply z-[10] relative;
+  }
+  .slider-person h4 {
+    @apply lg:mb-0;
+  }
+  .slider-grid {
+    @apply lg:grid lg:grid-cols-2;
+  }
+  .slider-desc {
+    @apply lg:flex lg:flex-col lg:justify-center;
+  }
+  .slider-desc h2 {
+    @apply lg:pb-0 lg:pt-0;
+  }
+
+    /* EVENTS*/
+    .event-card {
+        @apply shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px] h-[32rem] max-w-[20rem]
+      }
+      
+      .img-zoom {
+        @apply relative transition-all duration-[0.5s];
+      }
+      
+      .img-zoom img {
+        @apply w-full h-[12rem] object-cover transition-all duration-[.5s];
+      }
+      
+      .img-zoom img:hover {
+        @apply scale-[1.2];
+      }
+      
+      .img-clip {
+        @apply overflow-clip;
+      }
+ 
+    /* FOOTER */
+    .footer {
+        @apply lg:p-8 p-3 bg-fbscolor mb-[-2rem];
+    }
+    .footer .footer__wrapper {
+        @apply flex flex-col items-center gap-5 md:flex md:flex-row md:place-content-around;
+    }
+
+     /*ABOUTBANNER*/
+     .aboutbanner{
+        @apply p-8 bg-[#f5f5f5] 
+          }
+       .aboutbanner__info{
+        @apply lg:grid lg:grid-cols-2
+       }
+       .aboutbanner__content{
+        @apply lg:mt-32 lg:mx-32
+       }
+       .aboutbanner__content h1 span{
+        @apply font-bold text-3xl
+       }
+       .aboutbanner__content h1 {
+        @apply font-normal text-3xl mb-10
+       }
+       .aboutbanner__content p {
+        @apply mb-10
+       }
+
+       /* EVENTS*/
+    .mission__cards{
+        @apply grid grid-cols-1 gap-6 lg:grid lg:grid-cols-[_2fr,_2fr,_2fr] lg:mt-10 lg:px-[10rem] p-8 mb-[-2rem]
+    }
+    .mission__title{
+        @apply  py-8 text-center
+    }
+    .mission__title h3{
+        @apply text-center pb-2 text-3xl font-bold 
+    }
+    .mission__title span{
+        @apply text-center pb-2 text-3xl font-normal 
+    }
+     .mission__cards .mission__card img{
+        @apply max-w-[350px] max-h-[233px] 
+    }
+    .mission__cards .mission__card h4{
+        @apply text-center font-bold text-[1.5rem] p-6;
+    }
+    .mission__cards .mission__card p{
+        @apply text-justify p-4;
+    }
+    .mission__cards .mission__card .card__infos{
+        @apply mx-4 mb-6 text-center;
+    }
+
+
+    /* CTA*/
+    .cta{
+        @apply bg-[radial-gradient(circle_farthest-side_at_center_bottom,#e81a86,#6a103f_125%)] lg:p-16 p-3
+    }
+    .cta__wrapper h2{
+        @apply text-center text-3xl text-white
+    }
+/* PARTNERS */
+.partners__image {
+    @apply lg:grid lg:grid-cols-3 lg:gap-6 place-items-center grid grid-cols-1 gap-5
+}
+.partners__image img{
+    @apply max-w-[270px] max-h-[100px]
+}
+}
+
+@layer utilities{
+    .btn{
+        @apply inline-block py-[.5rem] px-[1rem] rounded-full border-transparent border-[1px] 
+        text-sm font-medium;
+    }
+
+    .btn.bg--fbs{
+     @apply bg-fbscolor text-light text-center rounded-3xl hover:bg-light hover:text-black hover:border-dark px-[25px] py-[13px]
+        }
+
+    .btn.bg--meow{
+            @apply bg-transparent text-black text-center rounded-3xl border-black hover:bg-[#e7b3ce] hover:text-black hover:border-[#6a103f]
+            px-10  mt-8
+        }
+    .btn.bg--cta{
+            @apply bg-transparent text-white font-bold text-center rounded-3xl border-white hover:bg-white hover:text-black hover:border-white
+            px-10  mt-8
+        }
+    }
+   
+
