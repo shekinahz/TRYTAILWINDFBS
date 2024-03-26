@@ -4,6 +4,7 @@ module.exports = {
     fontFamily: {
       'montserrat': ['Montserrat', 'sans-serif'],
     },
+    
     extend: {
       backgroundImage: {
        FBSBanner: "url(/dist/img/fbs-banner-bg.png)",

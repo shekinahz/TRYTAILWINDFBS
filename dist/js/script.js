@@ -1,3 +1,27 @@
+document.addEventListener("DOMContentLoaded", function () {
+  const dropdownToggle = document.querySelector(".dropdown__contents");
+  const dropdownMenu = document.querySelector(".nav__links__dropdown");
+
+  dropdownToggle.addEventListener("mouseenter", function () {
+    dropdownToggle.classList.add("active");
+    dropdownMenu.classList.add("active");
+  });
+
+  dropdownToggle.addEventListener("mouseleave", function () {
+    dropdownToggle.classList.remove("active");
+    dropdownMenu.classList.remove("active");
+  });
+
+  dropdownMenu.addEventListener("mouseenter", function () {
+    dropdownToggle.classList.add("active");
+  });
+
+  dropdownMenu.addEventListener("mouseleave", function () {
+    dropdownToggle.classList.remove("active");
+    dropdownMenu.classList.remove("active");
+  });
+});
+
 const burgerbtn = document.querySelector(".burger__menu");
 const headerA = document.querySelector("nav");
 burgerbtn.addEventListener("click", () => {
